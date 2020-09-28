@@ -22,10 +22,11 @@ class Config(object):
 
     HOST = env.str("DB_HOST", default="127.0.0.1")
     DATABASE = env.str("DB_DATABASE", default="local")
+    PORT = env.str("DB_PORT", default="3306")
     USERNAME = env.str("DB_USERNAME", default="homestead")
     PASSWORD = env.str("DB_PASSWORD", default="secret")
 
-    MONGO_URI = env.str("DB_MONGO_HOST", default="mongodb://localhost:27017/myDatabase")
+    MONGO_URI = f"mongodb://{HOST}:{PORT}/{DATABASE}"
 
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}?charset=utf8mb4'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
