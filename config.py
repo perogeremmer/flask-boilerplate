@@ -31,6 +31,7 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = f'mysql+pymysql://{USERNAME}:{PASSWORD}@{HOST}/{DATABASE}?charset=utf8mb4'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_RECORD_QUERIES = True
+    SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     DEBUG = debugMode
 
     tls = str(env.str("MAIL_USE_TLS", default="1"))

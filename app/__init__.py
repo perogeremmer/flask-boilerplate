@@ -32,5 +32,5 @@ cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 from app.routes.api import routes
 from app.routes.web import routes
-from app.models import user
+from app.models import user, todo, todo_log
 
